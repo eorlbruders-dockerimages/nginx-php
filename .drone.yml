@@ -26,3 +26,12 @@ pipeline:
         target: email_username
       - source: email
         target: email_recipients
+  trigger:
+    image: plugins/downstream
+    server: https://drone.eorlbruder.de
+    fork: true
+    repositories:
+      	- nextcloud
+	- lychee
+	- freshrss
+    secrets: [ downstream_token ]
