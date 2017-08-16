@@ -1,0 +1,5 @@
+sed -i -e "s/;daemonize\s*=\s*yes/daemonize = no/g" /etc/php/php-fpm.conf
+sed -i 's/;extension=xcache.so/extension=xcache.so/g' /etc/php/conf.d/xcache.ini
+
+touch /var/log/php-fpm.log
+chown -R http /var/log/php-fpm.log /run/php-fpm
